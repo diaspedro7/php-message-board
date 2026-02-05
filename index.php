@@ -1,42 +1,21 @@
 <?php 
 
+require 'functions.php';
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message_name = $_POST['message_name'];
     $message_text = $_POST['message_text'];
 
-    //file path
-    $filePath = 'data/messages.json';
-
-
-    //get file data
-    $current_data = file_get_contents($filePath);
-
-    //convert json to array
-     $messages = json_decode($current_data, true);
-
-    //create new message
-    $new_message = [
-        'name' => $message_name,
-        'message' => $message_text
-    ];
-
-    //add new message to array of messages
-    $messages[] = $new_message;
-
-    //convert array to json
-    $json_data = json_encode($messages, JSON_PRETTY_PRINT);
-
-    //save json
-    file_put_contents($filePath, $json_data);
-
+    $saved_message = saveMessageInJSON($message_name, $message_text);
+    
     echo "Message saved successfully! <br>";
 
-    echo "Name: ". $new_message['name']. "<br>";
-    echo "Text: ". $new_message['message'];
-    
-
+    echo "Name: ". $saved_message['name']. "<br>";
+    echo "Text: ". $saved_message['message'];
 
 }
+
 
 ?>
 
