@@ -3,7 +3,7 @@
 require 'functions.php';
 
 //load data
-$messages = loadJSONData();
+$messages = loadMessagesDescending();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message_name = $_POST['message_name'];
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $saved_message = saveMessageInJSON($message_name, $message_text);
 
-    $messages = loadJSONData();
+    $messages = loadMessagesDescending();
 
     //redirect
     header('Location: index.php');
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
      <!-- LEFT SIDE -->
      <div class="left">
-<h2>Send a message</h2>
+    <h2>SEND A MESSAGE</h2>
 
     <form action="index.php" method="POST">
         <label for="message_name">Your name:</label>
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- RIGHT SIDE -->
     <div class="right">
-        <h2>Messages</h2>
+        <h2>MESSAGES</h2>
 
         <?php if (empty($messages)): ?>
         <p>No messages yet.</p>

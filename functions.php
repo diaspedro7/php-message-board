@@ -28,8 +28,6 @@ function saveMessageInJSON($message_name, $message_text){
 
 
 function loadJSONData(){
-
-
     //get file data
     $current_data = file_get_contents(FILE_PATH);
 
@@ -40,5 +38,12 @@ function loadJSONData(){
 
      return $messages_array;
 }
+
+//convert array to descending order
+function loadMessagesDescending() {
+    $messages = loadJSONData();
+    return array_reverse($messages);
+}
+
 
 ?>
