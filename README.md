@@ -1,5 +1,15 @@
 # Message Board
 
+## Disponível online
+
+A aplicação está hospedada na plataforma **InfinityFree**, um serviço de hospedagem gratuita utilizado para fins de estudo e testes.  
+O objetivo da publicação online é demonstrar o funcionamento real da aplicação em ambiente web.
+
+O projeto **Message Board em PHP** está disponível online para testes no seguinte endereço:
+https://messageboard.infinityfree.me/
+
+---
+
 ## Sobre o projeto
 
 Este projeto consiste em um **mural de mensagens simples**, onde o usuário pode enviar um nome e uma mensagem através de um formulário, e as mensagens enviadas são exibidas em uma lista na mesma página.
